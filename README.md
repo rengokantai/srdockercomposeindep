@@ -14,3 +14,7 @@ services:
     ports:
       - 80
 ```
+run in daemon mode
+```
+docker-compose up -d
+```
