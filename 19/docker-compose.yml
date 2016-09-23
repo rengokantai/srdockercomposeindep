@@ -1,0 +1,25 @@
+version: '2'
+services:
+  a:
+    image: tutum/hello-world
+    networks:
+      - front
+      - ke
+    external_links:
+      - hello:h
+  b:
+    image: tutum/hello-world
+    networks:
+      - back
+      - front
+  c:
+    image: tutum/hello-world
+    networks:
+      - back
+networks:
+  front:
+    driver: bridge
+  back:
+    driver: bridge
+  ke:
+    external: true
