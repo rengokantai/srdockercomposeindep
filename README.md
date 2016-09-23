@@ -33,3 +33,18 @@ services:
     image: tutum/hello-world
   b:
     image: tutum/hello-world
+networks:
+  default:
+    driver: bridge
+```
+start
+```
+docker-compose up -d
+docker inspect 123456
+docker-compose exec a sh
+ping b  //success
+```
+start with prject name
+```
+docker-compose --project-name ke up -d
+```
