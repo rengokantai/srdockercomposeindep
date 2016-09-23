@@ -48,3 +48,31 @@ start with prject name
 ```
 docker-compose --project-name ke up -d
 ```
+####18 Isolating containers
+if the network names are
+```
+front
+back
+```
+server names are
+```
+a
+b
+c
+```
+username is root,then
+```
+docker network inspect root_front
+```
+#####19. Using external networks
+```
+docker network create --driver bridge ke
+docker run -d --name hello --net ke tutum/hello-world
+docker network inspect ke
+```
+
+running docker-compose.yml, then
+```
+docker-compose exec ping -c1 hello
+docker-compose exec ping -c1 h
+```
