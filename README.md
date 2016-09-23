@@ -20,3 +20,16 @@ docker-compose up -d
 ```
 ####11 How restarts work
 restart is running independently,however, restarts propagate (to its dependants) If db fails and restarts, then wordpress automatically restarts, whether it's running or failing
+
+####15. Networking Overview
+By default, the network is bridge, all containers visible to each other.
+
+####16. The default network
+example
+```
+version: '2'
+services:
+  a:
+    image: tutum/hello-world
+  b:
+    image: tutum/hello-world
