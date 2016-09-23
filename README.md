@@ -18,3 +18,5 @@ run in daemon mode
 ```
 docker-compose up -d
 ```
+####11 How restarts work
+restart is running independently,however, restarts propagate (to its dependants) If db fails and restarts, then wordpress automatically restarts, whether it's running or failing
