@@ -2,7 +2,7 @@ version: '2'
 services:
   worker:
     image: tutum/hello-world
-    command: sh -c "while true; do wcho ke; done"
+    command: sh -c "while true; do echo ke; done"
     logging:
       driver: json-file
       options:
