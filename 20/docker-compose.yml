@@ -1,0 +1,24 @@
+version: '2'
+services:
+  a:
+    image: tutum/hello-world
+    networks:
+      - front
+  b:
+    image: tutum/hello-world
+    networks:
+      back:
+        aliases:
+          - website
+      front:
+        aliases:
+          - web
+  c:
+    image: tutum/hello-world
+    networks:
+      - back
+networks:
+  front:
+    driver: bridge
+  back:
+    driver: bridge
