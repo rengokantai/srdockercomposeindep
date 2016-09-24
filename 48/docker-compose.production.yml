@@ -1,0 +1,19 @@
+version: '2'
+services:
+  wordpress:
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: 12345678
+  db:
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: 12345678
+  
+  networks:
+    back:
+      driver: overlay
+    front:
+      driver: overlay
