@@ -2,6 +2,7 @@ version: '2'
 services:
   a:
     image: tutum/hello-world
+    container_name: foo
     networks:
       front:
         aliases:
