@@ -236,3 +236,16 @@ then check
 ```
 docker-compose run worker env
 ```
+we can also create temp var. see yml,we launch use
+```
+BAR=2 docker-compose ...
+```
+####42 merge multiple docker-compose file
+latest file take presentance
+```
+docker-compose -f a.yml -f b.yml config
+```
+#####43 The Default override file
+write local override file called docker-compose.override.yml
+#####44 The `extends` config
+#####48 Sample
