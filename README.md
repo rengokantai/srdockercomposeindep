@@ -154,3 +154,13 @@ docker-compose exec resizer ls /images
 docker-compose exec resizer touch /images/ke
 docker run --rm -v images:/images tutum/hello-world ls /image
 ```
+#####30 Config Logging
+see yml, then
+```
+docker-compose up -d
+docker-dompose logs -f
+```
+or output format
+```
+docker inspect --format '{{.LogPath}}' root_worker_1 |xargs ls -la
+```
