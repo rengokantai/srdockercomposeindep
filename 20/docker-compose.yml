@@ -3,7 +3,9 @@ services:
   a:
     image: tutum/hello-world
     networks:
-      - front
+      front:
+        aliases:
+          - web
   b:
     image: tutum/hello-world
     networks:
