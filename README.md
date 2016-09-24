@@ -120,3 +120,26 @@ or
 docker-compose port nginx 80 | awk -F : '{print "localhost:" $2}'|xargs curl
 docker-compose inspect root_nginx_1
 ```
+#####26 Named volumes -- communication between volumes
+see yml,then scale it
+```
+docker-compose scale worker=2
+```
+check volume folder
+```
+docker-compose exec worker ls /res
+```
+put file and check the result in other container
+```
+docker exec root_worker_1 touch /res/ke
+docker exec root_worker_2 ls /res
+```
+
+check all volume
+```
+docker volume ls
+```
+we create another service called report using volumes_from directive,we set it readonly,so this is error:
+```
+docker-compose exec report touch /res/k
+```
