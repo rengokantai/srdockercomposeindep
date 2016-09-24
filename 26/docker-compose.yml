@@ -1,0 +1,8 @@
+version: '2'
+services:
+  worker:
+    image: tutum/hello-world
+    volumes:
+      - res:/res
+volumes:
+  res::
