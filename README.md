@@ -215,3 +215,24 @@ docker-compose config
 ```
 docker-compose down  (or restart = down/up)
 ```
+#####39 Env files
+see yml, run
+```
+TAG=latest docker-compose up -d
+```
+but this is not convenient, we create .env file
+```
+TAG=latest
+```
+so this time no errors
+```
+docker-compose up -d
+```
+create other env file, such as staging.env, we add
+```
+FOO=1
+```
+then check
+```
+docker-compose run worker env
+```
