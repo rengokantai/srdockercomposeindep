@@ -184,3 +184,13 @@ docker-compose up -d //first
 docker-compose --project-name ke up -d //second
 ```
 #####35 up lifecycle
+#####36 Changing a running env
+```
+docker-compose pause/unpause worker 
+docker-compose run worker ls
+```
+#####37 Introspecting on an env
+review:
+```
+docker-compose port worker 80
+```
