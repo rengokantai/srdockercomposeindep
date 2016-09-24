@@ -76,3 +76,18 @@ running docker-compose.yml, then
 docker-compose exec ping -c1 hello
 docker-compose exec ping -c1 h
 ```
+#####20. Aliases and container names
+see yml file,
+```
+docker-compose exec a ping -c1 web //success
+docker-compose exec a ping -c1 website //fail
+```
+we can update container name
+```
+container_name: foo
+```
+#####21. Links
+see yml file, we can ping using new name
+```
+docker-compose exec a ping -c1 bee
+```
