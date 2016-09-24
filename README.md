@@ -91,3 +91,14 @@ see yml file, we can ping using new name
 ```
 docker-compose exec a ping -c1 bee
 ```
+#####25 simple volume
+a nginx config default.conf
+```
+server {
+  listen 80;
+  server_name localhost;
+  lsiten / {
+    return 200 "hello";
+  }
+}
+```
