@@ -194,3 +194,24 @@ review:
 ```
 docker-compose port worker 80
 ```
+
+If multiple container use same service, like 
+```
+docker-compose scale worker=2
+```
+we can get specific service container's host port (1 based, default=1)
+```
+docker-compose port --index=2 worker 80
+```
+get real time info
+```
+docker-compose events
+```
+show config file/check syntax errors
+```
+docker-compose config
+```
+#####38 Take an env down
+```
+docker-compose down  (or restart = down/up)
+```
