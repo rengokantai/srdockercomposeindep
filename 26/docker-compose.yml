@@ -4,5 +4,9 @@ services:
     image: tutum/hello-world
     volumes:
       - res:/res
+  report:
+    image: tutum/hello-world
+    volumes_from:
+      - worker:ro
 volumes:
   res:
