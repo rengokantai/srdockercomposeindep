@@ -97,8 +97,26 @@ a nginx config default.conf
 server {
   listen 80;
   server_name localhost;
-  lsiten / {
+  location / {
     return 200 "hello";
   }
 }
+```
+Note:
+```
+ports:
+      - 80  //this is port number only on container machine
+```
+test, get port number on host machine
+```
+docker-compose port nginx 80
+```
+then
+```
+curl localhost:port
+```
+or
+```
+docker-compose port nginx 80 | awk -F : '{print "localhost:" $2}'|xargs curl
+docker-compose inspect root_nginx_1
 ```
