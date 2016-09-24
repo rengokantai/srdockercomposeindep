@@ -164,3 +164,23 @@ or output format
 ```
 docker inspect --format '{{.LogPath}}' root_worker_1 |xargs ls -la
 ```
+#####31 Forwarding logs
+We use [papertrail](https://papertrailapp.com)  
+step->Add first system->copy link
+```
+logs4.papertrailapp.com:306
+```
+update our yml file,then go to papaetrail,check dashboard
+
+
+#####34 Config compose
+ex: use other file
+```
+docker-compose -f ke.yml up
+```
+launch multiple container(groups)
+```
+docker-compose up -d //first
+docker-compose --project-name ke up -d //second
+```
+#####35 up lifecycle
