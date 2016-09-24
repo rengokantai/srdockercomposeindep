@@ -1,0 +1,35 @@
+version: '2'
+services:
+  wordpress:
+    image: wordpress
+    depends_on:
+      - db
+    ports:
+      - "80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    networks:
+      - front
+    restart: always
+  db:
+    image:mariadb:10.1
+    volumes:
+      - "db:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    networks:
+      - front
+      - back
+    restart: always
+    
+    volumes:
+      db:
+    
+    networks:
+      back:
+      front:
