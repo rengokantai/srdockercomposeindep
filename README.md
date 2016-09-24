@@ -143,3 +143,14 @@ we create another service called report using volumes_from directive,we set it r
 ```
 docker-compose exec report touch /res/k
 ```
+#####27 Fine-grained volume
+create external volume using vanilla docker command
+```
+docker volume create --name images --driver=local
+```
+test
+```
+docker-compose exec resizer ls /images
+docker-compose exec resizer touch /images/ke
+docker run --rm -v images:/images tutum/hello-world ls /image
+```
